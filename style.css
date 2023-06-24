@@ -1,0 +1,120 @@
+body{
+    padding: 100px;
+}
+
+
+#submit-area{
+  
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px gray;
+}
+
+
+#SineIn{
+display: none;
+
+   
+}
+#Signein{
+   margin-top: 30px;
+margin-left: 20px;
+}
+#Signein:hover{
+    background-color: blue;
+}
+#SineIn h1{
+    text-align: center;
+}
+#Sine{
+    margin-left: 250px;
+    
+}
+  
+#transaction-area{
+    display: none;
+}
+.deposit{
+    box-shadow: 25px 25px 35px rgb(91, 84, 84);
+    border-radius: 10px;
+    height: 150px;
+    padding: 40px;
+  background-color: rgb(235, 139, 29);
+    
+}
+.withdraw{
+    box-shadow: 25px 25px 35px rgb(91, 84, 84);
+    border-radius: 10px;
+    height: 150px;
+    padding: 40px;
+    background-color:rgb(141, 5, 143);
+}
+.balance{
+    box-shadow: 25px 25px 35px rgb(91, 84, 84);
+    border-radius: 10px;
+    height: 150px;
+    padding: 40px;
+    background-color:darksalmon;
+}
+.status{
+    margin: 0 20px;
+    color: white;
+}
+/* Movilescreen */
+
+
+@media(max-width:700px){
+    body{
+        padding: 5px;
+    }
+    
+  #transaction-area{
+    
+        display: none;
+        position: relative;
+     
+    
+
+    }
+    .status{
+        width: 200px;
+        height: 150px;
+        margin: 20px;
+        
+    }
+    .deposit{
+        position: absolute;
+            top: 0px;
+            left: 340px;
+            height: 100px;
+            width: 150px;
+            padding: 10px; 
+            top: 25px;
+}
+.withdraw{
+  
+    height: 100px;
+    padding: 10px;
+    width: 150px;
+    
+    position: absolute;
+    top: 0px;
+    right: 145px;
+    
+}
+.balance{
+   
+   
+    height: 100px;
+    width: 150px;
+    padding: 10px;
+ 
+    
+   right: 370px;
+}
+   
+}
+    
+
+

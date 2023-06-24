@@ -4,11 +4,152 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bKash-bank</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1> Hello Website</h1>
+ </head><body>
+    <div id="submit-area">
+<div class="login-area">
+    <h1 class="text-center">Welcome  to bkash bank</h1>
+    
    
+        <h4>Resigter</h4>
+      
+     
+        <input type="text" class="form-control" id="first" placeholder="First name">
+       
+        <br>
+    
+       
+        <input type="text" class="form-control" id="last" placeholder=" Last name">
+
+        <br>
+        
+        <input type="text" class="form-control" id="email" placeholder="Email">
+        <br>
+        <input type="number" name="" id="phone"  class="form-control" placeholder="Phone number">
+        <br>
+      
+      
+        <input type="password" class="form-control" name="" id="password"  placeholder="password">
+        <br>
+        
+        <input type="password" class="form-control" name="" id="confirm" placeholder="Confirm password">     <br>
+        <p> <label for="Shoute vorta"></label><input type="checkbox" name="checkbox" id="Shoute vorta"> i Agree all permission</p>
+        <button id="Login" class="btn btn-success">Sign up</button>
+        <button id="Sine" class="btn btn-success">Sine in</button>
+    </div>
+</div>
+
+<div id="SineIn">
+    <h1>Sine in</h1>
+    <input type="text" class="form-control" placeholder="Email">
+    <br>
+    
+    <input type="password" class="form-control" name="" id=""  placeholder="password">
+    <button id="Signein" class="btn btn-success">Signe-in</button>
+
+</div>
+<div id="transaction-area"> 
+    <div class="row">
+        <div class="col-md-4 ">
+            <div class="deposit status">
+            <h5>Deposit</h5>
+            <h2>$ <span id="currentDeposit">00</span> </h2>
+        </div>
+        </div>
+        <br>
+        <div class="col-md-4 ">
+            <div class="withdraw status">
+            <h5>Withdraw</h5>
+            <h2>Taka: 00</h2>
+        </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="balance status">
+            <h5>Balance</h5>
+            <h2>$  <span id="currentBalance">5</span> </h2>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div id="submit-area">
+            <h4>Deposit</h4>
+            <input id="depositAmount" type="text" class="form-control"placeholder="amount you went to deposit"><br>
+            <button id="addDeposit" class="btn btn-success">Deposit</button></div></div>
+        <div class="col-md-6">
+            <div id="submit-area">
+            <h4>Withdraw</h4>
+            <input id="withdrawAmount" type="text" class="form-control" placeholder="amount you went to withdraw">
+            <br>
+            <button id="addWithdraw" class="btn btn-success">Withdraw</button></div></div>
+    </div>
+</div>
+
+
+<script>
+    // login button event hendler
+    const Login = document.getElementById("Login");
+    Login.addEventListener("click",function(){
+      const LoginArea = document.getElementById("submit-area");
+      LoginArea.style.display = "none";
+      const transactionArea =document.getElementById("transaction-area");
+      transactionArea.style.display = "block";
+      
+    })
+    const Sine = document.getElementById("Sine");
+    Sine.addEventListener("click",function(){
+      const Sine = document.getElementById("submit-area");
+      Sine.style.display = "none";
+      const transactionArea =document.getElementById("SineIn");
+      transactionArea.style.display = "block";
+      
+    })
+      // sine in button event hendler
+    const Signein = document.getElementById("Signein");
+    Signein.addEventListener("click",function(){
+      const Signein = document.getElementById("SineIn");
+      Signein.style.display = "none";
+      const transactionArea =document.getElementById("transaction-area");
+      transactionArea.style.display = "block";
+      
+    })
+      // deposit button event hendlar
+
+  const depositBtn = document.getElementById("addDeposit");
+      depositBtn.addEventListener('click', function(){
+      const depositNumber = getInputNumber("depositAmount");
+        
+        document.getElementById('depositAmount').value = '';
+        updateSpanText('currentBalance', depositNumber );
+        updateSpanText('currentDeposit', depositNumber )
+
+      })
+       // deposit button event hendler
+      const withdrawBtn = document.getElementById("addWithdraw");
+      withdrawBtn.addEventListener("click",function(){
+        const withdrawNumber = getInputNumber("withdrawAmount");
+       console.log(withdrawNumber)
+      
+
+      })
+      function getInputNumber(id){
+        const amount = document.getElementById(id).value;
+        const amountNumber = parseFloat(amount);
+        return amountNumber;
+      }
+
+      function updateSpanText(id, depositNumber){
+        const current = document.getElementById(id).innerText;
+        const currentNumber =parseFloat(current);
+         const totalAmount = depositNumber + currentNumber;
+        document.getElementById(id).innerText = totalAmount;
+
+      }
+     
+     
+</script>
+
     
 </body>
-</html>
