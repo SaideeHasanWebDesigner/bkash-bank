@@ -31,7 +31,9 @@ margin-left: 20px;
     margin-left: 250px;
     
 }
-  
+  .border{
+    border: 1px solid green
+  }
 #transaction-area{
     display: none;
 }
@@ -85,12 +87,12 @@ margin-left: 20px;
     }
     .deposit{
         position: absolute;
-            top: 0px;
+        
             left: 340px;
             height: 100px;
             width: 150px;
             padding: 10px; 
-            top: 25px;
+           
 }
 .withdraw{
   
