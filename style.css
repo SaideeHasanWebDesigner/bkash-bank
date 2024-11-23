@@ -17,48 +17,23 @@ display: none;
 
    
 }
-#Signein{
-   margin-top: 30px;
-margin-left: 20px;
-}
+
 #Signein:hover{
     background-color: blue;
 }
 #SineIn h1{
     text-align: center;
 }
-#Sine{
-    margin-left: 250px;
-    
-}
+
   .border{
     border: 1px solid green
   }
 #transaction-area{
     display: none;
 }
-.deposit{
-    box-shadow: 25px 25px 35px rgb(91, 84, 84);
-    border-radius: 10px;
-    height: 150px;
-    padding: 40px;
-  background-color: rgb(235, 139, 29);
-    
-}
-.withdraw{
-    box-shadow: 25px 25px 35px rgb(91, 84, 84);
-    border-radius: 10px;
-    height: 150px;
-    padding: 40px;
-    background-color:rgb(141, 5, 143);
-}
-.balance{
-    box-shadow: 25px 25px 35px rgb(91, 84, 84);
-    border-radius: 10px;
-    height: 150px;
-    padding: 40px;
-    background-color:darksalmon;
-}
+
+
+
 .status{
     margin: 0 20px;
     color: white;
@@ -79,43 +54,9 @@ margin-left: 20px;
     
 
     }
-    .status{
-        width: 200px;
-        height: 150px;
-        margin: 20px;
-        
-    }
-    .deposit{
-        position: absolute;
-        
-            left: 340px;
-            height: 100px;
-            width: 150px;
-            padding: 10px; 
-            top: 10px;
-           
-}
-.withdraw{
-  
-    height: 100px;
-    padding: 10px;
-    width: 150px;
-    
-    position: absolute;
-    top: 0px;
-    right: 145px;
-    
-}
-.balance{
-   
-   
-    height: 100px;
-    width: 150px;
-    padding: 10px;
- 
-    
-   right: 370px;
-}
+
+
+
    
 }
     

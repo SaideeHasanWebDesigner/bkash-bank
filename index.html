@@ -1,160 +1,137 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>bKash-bank</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100">
+    <div id="submit-area" class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+        <div class="login-area">
+            <h1 class="text-center text-2xl font-bold">Welcome to Pioneer Bank</h1>
+            <h4 class="mt-4 text-lg">Register</h4>
 
-    <link rel="stylesheet" href="style.css">
- </head><body>
-    <div id="submit-area">
-<div class="login-area">
-    <h1 class="text-center">Welcome  to Pioneer bank</h1>
-    
-   
-        <h4>Resigter</h4>
-      
-     
-        <input type="text" class="form-control" id="first" placeholder="First name">
-       
-        <br>
-    
-       
-        <input type="text" class="form-control" id="last" placeholder=" Last name">
+            <input type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="first" placeholder="First name" />
+            <input type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="last" placeholder="Last name" />
+            <input type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="email" placeholder="Email" />
+            <input type="number" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="phone" placeholder="Phone number" />
+            <input type="password" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="password" placeholder="Password" />
+            <input type="password" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" id="confirm" placeholder="Confirm password" />
 
-        <br>
-        
-        <input type="text" class="form-control" id="email" placeholder="Email">
-        <br>
-        <input type="number" name="" id="phone"  class="form-control" placeholder="Phone number">
-        <br>
-      
-      
-        <input type="password" class="form-control" name="" id="password"  placeholder="password">
-        <br>
-        
-        <input type="password" class="form-control" name="" id="confirm" placeholder="Confirm password">     <br>
-        <p> <label for="Shoute vorta"></label><input type="checkbox" name="checkbox" id="Shoute vorta"> i Agree all permission</p>
-        <button id="Login" class="btn btn-success">Sign up</button>
-        <button id="Sine" class="btn btn-success">Sine in</button>
-    </div>
-</div>
+            <div class="flex items-center mt-4">
+                <input type="checkbox" id="Shoute vorta" class="mr-2" />
+                <label for="Shoute vorta" class="text-sm">I agree to all permissions</label>
+            </div>
 
-<div id="SineIn">
-    <h1>Sine in</h1>
-    <input type="text" class="form-control" placeholder="Email">
-    <br>
-    
-    <input type="password" class="form-control" name="" id=""  placeholder="password">
-    <button id="Signein" class="btn btn-success">Signe-in</button>
-
-</div>
-<div id="transaction-area"> 
-    <div class="row">
-        <div class="col-md-4 ">
-            <div class="deposit status">
-            <h5>Deposit</h5>
-            <h2>৳ <span id="currentDeposit">00</span> </h2>
-        </div>
-        </div>
-        <br>
-        <div class="col-md-4 ">
-            <div class="withdraw status">
-            <h5>Withdraw</h5>
-            <h2>৳ <span id="currentWithdrew">00</span> </h2>
-        </div>
-        </div>
-        <div class="col-md-4 ">
-            <div class="balance status">
-            <h5>Balance</h5>
-            <h2>৳ <span id="currentBalance">230</span> </h2>
-        </div>
+            <button id="Login" class="mt-4 w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Sign Up</button>
+            <button id="Sine" class="mt-2 w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Sign In</button>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div id="submit-area">
-            <h4>Deposit</h4>
-            <input id="depositAmount" type="text" class="form-control"placeholder="amount you went to deposit"><br>
-            <button id="addDeposit" class="btn btn-success">Deposit</button></div></div>
-        <div class="col-md-6">
-            <div id="submit-area">
-            <h4>Withdraw</h4>
-            <input id="withdrawAmount" type="text" class="form-control" placeholder="amount you went to withdraw">
-            <br>
-            <button id="addWithdraw" class="btn btn-success">Withdraw</button></div></div>
-    </div>
-</div>
 
 
-<script>
-    // login button event hendler
-    const Login = document.getElementById("Login");
-    Login.addEventListener("click",function(){
-      const LoginArea = document.getElementById("submit-area");
-      LoginArea.style.display = "none";
-      const transactionArea =document.getElementById("transaction-area");
-      transactionArea.style.display = "block";
-      
-    })
-    const Sine = document.getElementById("Sine");
-    Sine.addEventListener("click",function(){
-      const Sine = document.getElementById("submit-area");
-      Sine.style.display = "none";
-      const transactionArea =document.getElementById("SineIn");
-      transactionArea.style.display = "block";
-      
-    })
+
+    <div id="SineIn" class="max-w-md mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+      <h1 class="text-2xl font-bold mb-4">Sign In</h1>
+      <input type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" placeholder="Email" />
+      <br />
+      <input type="password" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" placeholder="Password" />
+      <button id="Signein" class="mt-4 w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Sign In</button>
+  </div>
+  
+  <div id="transaction-area" class="max-w-5xl mx-auto p-6 bg-white shadow-md rounded-lg mt-10">
+      <div class="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2  gap-4">
+          <div class="deposit status p-4 bg-green-400 rounded shadow">
+              <h5 class="font-bold">Deposit</h5>
+              <h2 class="text-lg">৳ <span id="currentDeposit">00</span></h2>
+          </div>
+          
+          <div class="withdraw status p-4 bg-red-400 rounded shadow">
+              <h5 class="font-bold">Withdraw</h5>
+              <h2 class="text-lg">৳ <span id="currentWithdrew">00</span></h2>
+          </div>
+          <div class="balance status p-4 bg-blue-400 rounded shadow">
+              <h5 class="font-bold">Balance</h5>
+              <h2 class="text-lg">৳ <span id="currentBalance">230</span></h2>
+          </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+          <div class="p-4 bg-white shadow rounded">
+              <h4 class="font-semibold">Deposit</h4>
+              <input id="depositAmount" type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" placeholder="Amount you want to deposit" />
+              <button id="addDeposit" class="mt-2 w-full bg-green-500 text-white p-2 rounded hover:bg-green-600">Deposit</button>
+          </div>
+          <div class="p-4 bg-white shadow rounded">
+              <h4 class="font-semibold">Withdraw</h4>
+              <input id="withdrawAmount" type="text" class="form-control mt-2 p-2 border border-gray-300 rounded w-full" placeholder="Amount you want to withdraw" />
+              <button id="addWithdraw" class="mt-2 w-full bg-red-500 text-white p-2 rounded hover:bg-red-600">Withdraw</button>
+          </div>
+      </div>
+  </div>
+
+    <script>
+
+      // login button event hendler
+      const Login = document.getElementById("Login");
+      Login.addEventListener("click", function () {
+        const LoginArea = document.getElementById("submit-area");
+        LoginArea.style.display = "none";
+        const transactionArea = document.getElementById("transaction-area");
+        transactionArea.style.display = "block";
+      });
+      const Sine = document.getElementById("Sine");
+      Sine.addEventListener("click", function () {
+        const Sine = document.getElementById("submit-area");
+        Sine.style.display = "none";
+        const transactionArea = document.getElementById("SineIn");
+        transactionArea.style.display = "block";
+      });
       // sine in button event hendler
-    const Signein = document.getElementById("Signein");
-    Signein.addEventListener("click",function(){
-      const Signein = document.getElementById("SineIn");
-      Signein.style.display = "none";
-      const transactionArea =document.getElementById("transaction-area");
-      transactionArea.style.display = "block";
-      
-    })
+      const Signein = document.getElementById("Signein");
+      Signein.addEventListener("click", function () {
+        const Signein = document.getElementById("SineIn");
+        Signein.style.display = "none";
+        const transactionArea = document.getElementById("transaction-area");
+        transactionArea.style.display = "block";
+      });
       // deposit button event hendlar
 
-  const depositBtn = document.getElementById("addDeposit");
-      depositBtn.addEventListener('click', function(){
-      const depositNumber = getInputNumber("depositAmount");
-        
-        document.getElementById('depositAmount').value = '';
-        updateSpanText('currentBalance', depositNumber );
-        updateSpanText('currentDeposit', depositNumber )
-
-      })
+      const depositBtn = document.getElementById("addDeposit");
+      depositBtn.addEventListener("click", function () {
+        const depositNumber = getInputNumber("depositAmount");
+        if (depositNumber < 0) {
+          alert("Deposit number cannot be negtive");
+        } else {
+document.getElementById("depositAmount").value = "";
+          updateSpanText("currentBalance", depositNumber);
+          updateSpanText("currentDeposit", depositNumber);
+        }
+      });
       // withdrawBtn event hendler
 
       const withdrawBtn = document.getElementById("addWithdraw");
-      withdrawBtn.addEventListener("click",function(){
+      withdrawBtn.addEventListener("click", function () {
         const withdrawNumber = getInputNumber("withdrawAmount");
-    updateSpanText("currentWithdrew" , withdrawNumber);
-    updateSpanText('currentBalance', -1* withdrawNumber)
-    document.getElementById('withdrawAmount').value ="";
+        updateSpanText("currentWithdrew", withdrawNumber);
+        updateSpanText("currentBalance", -1 * withdrawNumber);
+        document.getElementById("withdrawAmount").value = "";
+      });
 
-      
-
-      })
-      
-      function getInputNumber(id){
+      function getInputNumber(id) {
         const amount = document.getElementById(id).value;
         const amountNumber = parseFloat(amount);
         return amountNumber;
       }
 
-      function updateSpanText(id, addedNumber){
+      function updateSpanText(id, addedNumber) {
         const current = document.getElementById(id).innerText;
-        const currentNumber =parseFloat(current);
-         const totalAmount = addedNumber + currentNumber;
+        const currentNumber = parseFloat(current);
+        const totalAmount = addedNumber + currentNumber;
         document.getElementById(id).innerText = totalAmount;
-
       }
-     
-     
-</script>
-
-    
-</body>
+    </script>
+  </body>
+</html>
